@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Premium To-Do Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN for modern, lightweight icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Left Sidebar: Stats & Form -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class='bx bx-check-double'></i>
+                <h1>TaskFlow</h1>
+            </div>
+            <p class="subtitle">Organize your day with clarity, focus, and flow.</p>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <span class="stat-title">Total</span>
+                    <span class="stat-value" id="stat-total">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-title">Pending</span>
+                    <span class="stat-value" id="stat-pending">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-title">Completed</span>
+                    <span class="stat-value" id="stat-completed">0</span>
+                </div>
+            </div>
+
+            <div class="input-panel glass-card">
+                <h2>Create targetTask</h2>
+                <form id="task-form">
+                    <div class="form-group">
+                        <label for="task-title">Title *</label>
+                        <input type="text" id="task-title" placeholder="e.g., Design homepage..." autocomplete="off">
+                        <span class="error-msg" id="title-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="task-desc">Description <span class="optional">(optional)</span></label>
+                        <textarea id="task-desc" rows="3" placeholder="Add some details..."></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="task-priority">Priority</label>
+                            <select id="task-priority">
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="btn-clear">Clear</button>
+                        <button type="submit" class="btn-primary" id="btn-submit"><i class='bx bx-plus'></i> Add Task</button>
+                    </div>
+                </form>
+            </div>
+            <div class="sidebar-footer">
+                <p>TaskFlow Dashboard v1.0</p>
+            </div>
+        </aside>
+
+        <!-- Right Main View: Tasks -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="search-bar glass-card">
+                    <i class='bx bx-search'></i>
+                    <input type="text" id="task-search" placeholder="Search tasks...">
+                </div>
+                <!-- Dynamic Date -->
+                <div class="current-date" id="current-date">
+                    -- --- ----
+                </div>
+            </header>
+
+            <div class="tasks-board">
+                <!-- Pending List -->
+                <section class="task-section">
+                    <div class="section-header">
+                        <h2><i class='bx bx-time-five'></i> Pending Tasks</h2>
+                    </div>
+                    <div class="task-list" id="pending-list">
+                        <!-- Tasks dynamically injected here -->
+                        <div class="empty-state">
+                            <i class='bx bx-notepad'></i>
+                            <p>No pending tasks. You're all caught up!</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Completed List -->
+                <section class="task-section">
+                    <div class="section-header">
+                        <h2><i class='bx bx-check-circle'></i> Completed Tasks</h2>
+                        <button id="clear-completed" class="btn-ghost" style="display: none;">Clear All</button>
+                    </div>
+                    <div class="task-list" id="completed-list">
+                        <!-- Completed tasks dynamically injected here -->
+                        <div class="empty-state">
+                            <i class='bx bx-badge-check'></i>
+                            <p>No completed tasks yet. Let's get to work!</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>

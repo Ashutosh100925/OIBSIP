@@ -1,0 +1,258 @@
+.admin-dashboard {
+  padding: 4rem 0;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.admin-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.admin-header p {
+  color: var(--text-muted);
+}
+
+.admin-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.mini-stat {
+  background: var(--bg-card);
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.mini-stat .icon {
+  font-size: 2rem;
+  color: var(--accent-primary);
+}
+
+.mini-stat strong {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.mini-stat span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.stock-alert-banner {
+  background: rgba(255, 94, 58, 0.1);
+  border: 1px solid rgba(255, 94, 58, 0.3);
+  color: var(--text-main);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bell-icon {
+  color: var(--accent-primary);
+  font-size: 1.5rem;
+  animation: shake 2s infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0); }
+  10%, 30%, 50% { transform: rotate(10deg); }
+  20%, 40%, 60% { transform: rotate(-10deg); }
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.admin-tabs button {
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.admin-tabs button:hover {
+  color: var(--text-main);
+  background: var(--bg-card);
+}
+
+.admin-tabs button.active {
+  background: var(--accent-primary);
+  color: white;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-card);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.admin-table th {
+  text-align: left;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.admin-table td {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.id-col {
+  font-family: monospace;
+  color: var(--text-muted);
+}
+
+.sub-text {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status-badge.order-received { background: rgba(0, 150, 255, 0.1); color: #0096ff; }
+.status-badge.in-the-kitchen { background: rgba(255, 165, 0, 0.1); color: orange; }
+.status-badge.sent-to-delivery { background: rgba(160, 32, 240, 0.1); color: purple; }
+.status-badge.delivered { background: rgba(46, 202, 127, 0.1); color: var(--success); }
+
+.status-select {
+  padding: 8px 12px;
+  background: var(--bg-input);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  outline: none;
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.inventory-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.inventory-card.low {
+  border-color: var(--accent-primary);
+  background: rgba(255, 94, 58, 0.05);
+}
+
+.ing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.category-pill {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  background: var(--bg-input);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.ing-stock {
+  margin-bottom: 1.5rem;
+}
+
+.stock-value {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  height: 6px;
+  background: var(--bg-input);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: var(--accent-primary);
+  border-radius: 10px;
+}
+
+.low .progress {
+  background: #ff4d4d;
+}
+
+.ing-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.ing-actions button {
+  flex: 1;
+  padding: 10px;
+  background: var(--bg-input);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.ing-actions button:hover {
+  background: var(--bg-card);
+  border-color: var(--accent-primary);
+}
+
+.admin-loading {
+  text-align: center;
+  padding: 10rem 0;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+}

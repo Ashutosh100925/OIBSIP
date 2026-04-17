@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter Pro</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Animated Elements -->
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+    
+    <!-- Main Converter App Container -->
+    <main class="converter-container">
+        <!-- App Header Section -->
+        <header class="converter-header">
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-temperature-half"></i>
+            </div>
+            <h1>Temperature Converter</h1>
+            <p>Instantly convert Celsius, Fahrenheit, and Kelvin with precision.</p>
+        </header>
+
+        <!-- Main Form -->
+        <form id="converter-form" class="converter-form">
+            
+            <!-- Temperature Input -->
+            <div class="input-group">
+                <label for="temperature">Degrees</label>
+                <div class="input-wrapper">
+                    <input type="number" id="temperature" placeholder="Enter temperature" step="any">
+                    <button type="button" id="reset-btn" class="icon-btn" aria-label="Reset input">
+                        <i class="fa-solid fa-rotate-left"></i>
+                    </button>
+                </div>
+                <span class="error-message" id="error-message">Please enter a valid number</span>
+            </div>
+
+            <!-- Unit Selectors Row -->
+            <div class="selectors-container">
+                <div class="input-group">
+                    <label for="from-unit">From</label>
+                    <div class="select-wrapper">
+                        <select id="from-unit">
+                            <option value="celsius">Celsius (°C)</option>
+                            <option value="fahrenheit">Fahrenheit (°F)</option>
+                            <option value="kelvin">Kelvin (K)</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down select-icon"></i>
+                    </div>
+                </div>
+
+                <!-- Swap Units Button -->
+                <button type="button" id="swap-btn" class="swap-btn" aria-label="Swap units">
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                </button>
+
+                <div class="input-group">
+                    <label for="to-unit">To</label>
+                    <div class="select-wrapper">
+                        <select id="to-unit">
+                            <option value="fahrenheit" selected>Fahrenheit (°F)</option>
+                            <option value="celsius">Celsius (°C)</option>
+                            <option value="kelvin">Kelvin (K)</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down select-icon"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Convert Action Button -->
+            <button type="submit" id="convert-btn" class="convert-btn">
+                <span>Convert</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </form>
+
+        <!-- Result Display Section -->
+        <div class="result-area" id="result-area">
+            <div class="result-content">
+                <span class="result-equation" id="result-equation"></span>
+                <div class="result-value-container">
+                    <span class="result-value" id="result-value">--</span>
+                    <span class="result-unit" id="result-unit"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

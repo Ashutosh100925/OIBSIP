@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - NexusAuth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-background">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <main class="auth-container">
+        <div class="auth-card register-card">
+            <div class="auth-header">
+                <div class="logo">
+                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    <span>NexusAuth</span>
+                </div>
+                <h1>Create Your Account</h1>
+                <p>Join us to experience the premium design ecosystem.</p>
+            </div>
+
+            <form id="registerForm" class="auth-form" novalidate>
+                <div id="generalError" class="feedback-message error hidden"></div>
+                <div id="generalSuccess" class="feedback-message success hidden"></div>
+
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" placeholder="Jon Snow" required autocomplete="name">
+                    <span class="inline-error hidden">Name must be at least 2 characters</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="regEmail">Email Address</label>
+                    <input type="email" id="regEmail" placeholder="name@example.com" required autocomplete="email">
+                    <span class="inline-error hidden">Please enter a valid email</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="regPassword" placeholder="Minimum 6 characters" required autocomplete="new-password">
+                        <button type="button" class="btn-toggle-password" tabindex="-1">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        </button>
+                    </div>
+                    <span class="inline-error hidden">Password must be at least 6 characters</span>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 24px;">
+                    <label for="regConfirmPassword">Confirm Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="regConfirmPassword" placeholder="Repeat your password" required autocomplete="new-password">
+                        <button type="button" class="btn-toggle-password" tabindex="-1">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        </button>
+                    </div>
+                    <span class="inline-error hidden">Passwords do not match</span>
+                </div>
+
+                <button type="submit" class="btn-primary" id="registerBtn">
+                    <span class="btn-text">Sign Up</span>
+                    <span class="spinner hidden"></span>
+                </button>
+            </form>
+
+            <div class="auth-footer" style="margin-top: 24px;">
+                <p>Already have an account? <a href="index.html">Log in here</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
